@@ -8,7 +8,12 @@ interface ImageUploadProps {
 }
 
 
-const ImageUpload = () => {
+const ImageUpload: React.FC<ImageUploadProps> = ({
+    disabled,
+    onChange,
+    onRemove,
+    value
+}) => {
     return (
         <div>
             image upload!
