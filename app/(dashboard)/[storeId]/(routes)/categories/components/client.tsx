@@ -6,15 +6,15 @@ import { Separator } from "@/components/ui/separator";
 
 import { PlusIcon } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
-import { BillboardColumn, columns } from "./columns";
+import { CategoryColumn, columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import ApiList from "@/components/ui/api-list";
 
-interface BillboardClientProps {
-    data: BillboardColumn[];
+interface CateogryClientProps {
+    data: CategoryColumn[];
 }
 
-const BillboardClient: React.FC<BillboardClientProps> = ({
+const CategoryClient: React.FC<CateogryClientProps> = ({
     data
 }) => {
 
@@ -25,26 +25,26 @@ const BillboardClient: React.FC<BillboardClientProps> = ({
         <>
             <div className="flex items-center justify-between">
                 <Heading
-                    title={`Billboards (${data.length})`}
-                    description="Manage billboards for your store" />
+                    title={`Categories (${data.length})`}
+                    description="Manage categories for your store" />
 
-                <Button onClick={() => router.push(`/${params.storeId}/billboards/new`)}>
+                <Button onClick={() => router.push(`/${params.storeId}/categories/new`)}>
                     <PlusIcon className="w-4 h-4 mr-2" />
                     Add New
                 </Button>
             </div>
             <Separator />
-            <DataTable searchKey="label" columns={columns} data={data} />
+            <DataTable searchKey="name" columns={columns} data={data} />
 
             <Heading
                 title="API"
-                description="API calls for Billboards" />
+                description="API calls for Categories" />
             <Separator />
             <ApiList
-                entityIdName="billboardId"
-                entityName="billboards" />
+                entityIdName="categoryId"
+                entityName="categories" />
         </>
     );
 }
 
-export default BillboardClient;
+export default CategoryClient;
