@@ -132,6 +132,7 @@ const BillboardForm: React.FC<BillboardFormProps> = ({
                                 <FormLabel>Background image</FormLabel>
                                 <FormControl>
                                     <ImageUpload
+
                                         values={field.value ? [field.value] : []}
                                         disabled={loading}
                                         onChange={(url) => field.onChange(url)}
