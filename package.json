@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@clerk/nextjs": "^4.21.14",
     "@hookform/resolvers": "^3.1.1",
@@ -47,6 +50,7 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
-    "prisma": "^4.16.2"
+    "prisma": "^4.16.2",
+    "ts-node": "^10.9.1"
   }
 }
