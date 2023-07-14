@@ -5,7 +5,7 @@ import { useStoreModal } from "@/hooks/use-store-modal";
 import { UserButton } from "@clerk/nextjs";
 import { useEffect } from "react";
 
-const setUpPage = () => {
+const SetUpPage = () => {
 
     const onOpen = useStoreModal((state) => state.onOpen);
     const isOpen = useStoreModal((state) => state.isOpen);
@@ -20,4 +20,4 @@ const setUpPage = () => {
 }
 
 
-export default setUpPage;
+export default SetUpPage;
