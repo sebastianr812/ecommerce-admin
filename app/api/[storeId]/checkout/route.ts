@@ -1,8 +1,7 @@
 import Stripe from "stripe";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import prismaDB from "@/lib/prismadb";
-import { metadata } from "@/app/layout";
 
 const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
@@ -17,7 +16,7 @@ export async function OPTIONS() {
 }
 
 export async function POST(
-    req: Request,
+    req: NextRequest,
     { params }: { params: { storeId: string } }
 ) {
     const body = await req.json();
